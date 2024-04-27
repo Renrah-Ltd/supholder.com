@@ -1,0 +1,19 @@
+{
+  "*": {
+    "Skinny Cans": {
+      "price": 0
+    }
+  },
+
+  "Blue": {
+    "Regular Cans": {
+      "price": 30,
+      "url": "https://buy.stripe.com/test_6oE3fD7II4d0cQ8eUU"
+    }
+  },
+  "Frosted": {
+    "Regular Cans": {
+      "price": 0
+    }
+  }
+}

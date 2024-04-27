@@ -1,31 +1,67 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
-
+import { StaticQuery, graphql, type HeadFC, type PageProps } from "gatsby"
+import Swatches from "../components/swatches";
+import Layout from "../components/layout";
+import SUPHolderLogo from "../images/sup-holder-logo.svg";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import BuyNowModal from "../components/buy-now-modal";
 
 // Define props where needed (for more complex components)
 type ButtonProps = {
   label: string;
-  onClick: () => void;
+  href?: string;
+  onClick?: () => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ label, onClick }) => (
-  <button onClick={onClick}>{label}</button>
-);
+const Button: React.FC<ButtonProps> = ({ label, href, onClick }) => {
+  if (href) {
+    return (<a className="button" href={href}>{label}</a>)
+  } else {
+    return (
+      <button className="button" onClick={onClick}>{label}</button>
+    )
+  }
+};
 
 const Header: React.FC = () => (
-  <header>
-    <h1>Stay Hydrated While You Paddle</h1>
-    <h2>Secure Your Beverage with the SUP Holder – Adventure Without Spills</h2>
+  <header className="header">
+    <StaticQuery
+      query={graphql`
+      query {
+        file(relativePath: { eq: "header-sample.webp" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 800
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+              layout: CONSTRAINED
+            )
+          }
+        }
+      }
+    `}
+      render={data => {
+        const image = getImage(data.file.childImageSharp.gatsbyImageData)
+        if (image) return <div className="header-image"><GatsbyImage image={image} alt="SUP Holder - Adventure Without Spills" /></div>
+      }}
+    />
+
+    <div className="header-content">
+      <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
+      <h1>Adventure Without Spills</h1>
+      <CallToAction />
+      <p>Universal Can Holder for Stand-Up Paddle Boards</p>
+    </div>
   </header>
 );
 
 const FeaturesSection: React.FC = () => (
-  <section>
+  <section className="features">
     <h3>Features</h3>
     <ul>
       <li>Fits any paddleboard with bungees</li>
-      <li>Secure Grip for regular 12oz soda & beer cans.</li>
-      <li>High-strength, Weather-resistant Plastic</li>
+      <li>Secure Grip for regular 12oz & 24oz soda & beer cans. <span>"Skinny Can" version coming soon</span></li>
+      <li>High-strength, Weather-Resistant Plastic</li>
     </ul>
   </section>
 );
@@ -44,11 +80,17 @@ const Testimonials: React.FC = () => (
   </section>
 );
 
-const CallToAction: React.FC = () => (
-  <section>
-    <Button label="Buy Now" onClick={() => console.log('Navigate to purchase')} />
-  </section>
-);
+const CallToAction: React.FC = () => {
+  const openModal = () => {
+    const event = new CustomEvent('openModalEvent');
+    window.dispatchEvent(event);
+  };
+
+
+  return (
+    <Button onClick={openModal} label="Buy Now" />
+  )
+};
 
 const FAQSection: React.FC = () => (
   <section>
@@ -64,16 +106,18 @@ const Footer: React.FC = () => (
 );
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main>
-      <Header />
-      <FeaturesSection />
-      <HowItWorks />
-      <Testimonials />
-      <CallToAction />
-      <FAQSection />
-      <Footer />
-
-    </main>
+    <Layout>
+      <>
+        <Header />
+        <FeaturesSection />
+        <HowItWorks />
+        <Testimonials />
+        <CallToAction />
+        <FAQSection />
+        <Footer />
+        <BuyNowModal />
+      </>
+    </Layout>
   )
 }
 

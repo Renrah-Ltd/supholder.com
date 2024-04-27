@@ -1,5 +1,36 @@
-$deep-ocean-blue: #015470;
+$pageWidth: 1200px;
+$contentWidth: 900px;
+
+$deep-ocean-blue: #00698c;
+$ocean-blue: lighten($deep-ocean-blue, 5);
 $vibrant-teal: #3ABAB4;
-$sand-beige: #E9C77B;
+$sand-beige: #ffebc0;
 $coral-red: #FF6B6B;
 $soft-white: #F9F9F9;
+$soft-gray: #eee;
+
+
+.swatches {
+    display: flex;
+    padding: 0;
+    background: #fff;
+    div {
+        width: 100%;
+        height: 15px;
+    }
+    div:nth-child(1){
+        background: $deep-ocean-blue;
+    }
+    div:nth-child(2){
+        background: $ocean-blue;
+    }
+    div:nth-child(3){
+        background: $vibrant-teal;
+    }
+    div:nth-child(4){
+        background: $sand-beige;
+    }
+    div:nth-child(5){
+        background: $coral-red;
+    }
+}

@@ -1,0 +1,26 @@
+.features {
+  display: grid;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  h3 {
+    text-align: center;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    li {  
+      @include flex('column');
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+
+      span {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

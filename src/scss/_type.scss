@@ -1,0 +1,69 @@
+// Base font size
+$base-font-size: 16px;
+
+// Font size scale
+$scale-small: 0.875em;  // 14px
+$scale-normal: 1em;     // 16px
+$scale-medium: 1.125em; // 18px
+$scale-large: 1.25em;   // 20px
+$scale-xlarge: 1.5em;   // 24px
+$scale-xxlarge: 2em;    // 32px
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+h1 {
+  font-family: 'Bungee', sans-serif;
+}
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  font-size: $scale-normal;
+}
+
+h1 {
+  font-size: $scale-xxlarge;
+}
+
+h2 {
+  font-size: $scale-xlarge;
+}
+
+h3 {
+  font-size: $scale-large;
+}
+
+h4 {
+  font-size: $scale-medium;
+}
+
+h5 {
+  font-size: $scale-normal;
+}
+
+h6 {
+  font-size: $scale-small;
+}
+
+// Responsive Typography with Custom Mixin
+@include breakpoint(laptop) {
+  h1 { font-size: calc(#{$scale-xxlarge} * 1.1); }
+  h2 { font-size: calc(#{$scale-xlarge} * 1.1); }
+  h3 { font-size: calc(#{$scale-large} * 1.1); }
+}
+
+@include breakpoint(desktop) {
+  h1 { font-size: calc(#{$scale-xxlarge} * 1.2); }
+  h2 { font-size: calc(#{$scale-xlarge} * 1.2); }
+  h3 { font-size: calc(#{$scale-large} * 1.2); }
+}
