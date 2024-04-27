@@ -18,6 +18,10 @@
         @media (min-width: 1024px) {
             @content;
         }
+    }  @else if $point==laptopdown {
+        @media (max-width: 1024px) {
+            @content;
+        }
     } @else if $point==tablet {
         @media (min-width: 768px) {
             @content;

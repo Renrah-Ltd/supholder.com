@@ -1,8 +1,10 @@
 import * as React from "react"
 import { StaticQuery, graphql, type HeadFC, type PageProps } from "gatsby"
-import Swatches from "../components/swatches";
 import Layout from "../components/layout";
 import SUPHolderLogo from "../images/sup-holder-logo.svg";
+import PaddleBoard from "../images/paddle-board.svg";
+import Can from "../images/can.svg";
+import Weather from "../images/weather.svg";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import BuyNowModal from "../components/buy-now-modal";
 
@@ -56,12 +58,18 @@ const Header: React.FC = () => (
 );
 
 const FeaturesSection: React.FC = () => (
-  <section className="features">
-    <h3>Features</h3>
+  <section aria-label="Features" className="features">
     <ul>
-      <li>Fits any paddleboard with bungees</li>
-      <li>Secure Grip for regular 12oz & 24oz soda & beer cans. <span>"Skinny Can" version coming soon</span></li>
-      <li>High-strength, Weather-Resistant Plastic</li>
+      <li>
+        <img className="sup-holder-logo" src={PaddleBoard} alt="Paddleboard Icon" />
+        Fits Any Paddle Board With Bungees
+      </li>
+      <li>
+        <img className="sup-holder-logo" src={Can} alt="Paddleboard Icon" />
+        Secure Grip For 12oz & 24oz Cans. <span>"Skinny Can" Version Coming Soon</span></li>
+      <li>
+        <img className="sup-holder-logo" src={Weather} alt="Paddleboard Icon" />
+        High-Strength, Weather-Resistant Plastic</li>
     </ul>
   </section>
 );
@@ -92,16 +100,45 @@ const CallToAction: React.FC = () => {
   )
 };
 
-const FAQSection: React.FC = () => (
-  <section>
-    <h3>FAQs</h3>
-    <p>Find answers to common questions about the SUP Holder.</p>
-  </section>
-);
+const FAQSection: React.FC = () => {
+
+  const questions = [
+    { q: "How does the SUP Holder attach to the paddle board?", a: "The SUP Holder attaches to your paddleboard by sitting underneath the bungees on the nose of the board. If your board does NOT have bungees, the SUP Holder won't work for you." },
+    {
+      q: "What size cans work with the SUP Holder?",
+      a: "The SUP Holder is designed to snugly fit the standard 12oz beverage can (picture a standard Beer can). It can also hold taller cans as long as their diameter is 2.6 inches. (think Monster Energy cans). Skinny cans ~can~ fit, but they won't be as stable. Skinny can SUP Holders coming soon."
+    },
+    {
+      q: "What is the SUP Holder made out of?",
+      a: "The SUP Holder is 3D printed out of PETG, a strong, heat & water resistant material. It's the chemical cousin of PET which is used in tons of plastic products throughout the world."
+    },
+    {
+      q: "How long does it take to ship?",
+      a: "Each SUP Holder is printed on demand. It can take 3-5 business days for your order to ship, and then another 5-7 days to arrive at your doorstep."
+    }
+  ]
+
+
+
+  return (
+
+
+    <section className="faqs">
+      <h3>SUP Holder FAQs</h3>
+      {questions.map(({ q, a }, i) => (
+        <details name="faq" open={(i == 0 ? true : false)}>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+      <p className="faqs-contact">If you have any other questions, please email us: <a href="mailto:sup@supholder.com">sup@supholder.com</a></p>
+    </section>
+  )
+};
 
 const Footer: React.FC = () => (
   <footer>
-    <p>Contact us at info@supholder.com</p>
+    
   </footer>
 );
 const IndexPage: React.FC<PageProps> = () => {
@@ -110,7 +147,6 @@ const IndexPage: React.FC<PageProps> = () => {
       <>
         <Header />
         <FeaturesSection />
-        <HowItWorks />
         <Testimonials />
         <CallToAction />
         <FAQSection />

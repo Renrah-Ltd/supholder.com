@@ -1,0 +1,19 @@
+.faqs {
+  padding: 2rem;
+  @include flex('column');
+    gap: 0.5rem;
+  details {
+    max-width: $contentWidth;
+    width: 100%;
+    border: 2px solid $deep-ocean-blue;
+    padding: 0.5rem;
+    summary {
+      padding: 0.5rem;
+      font-weight: 900;
+    }
+  }
+
+  &-contact {
+    text-align: center;
+  }
+}

@@ -2,24 +2,53 @@
   display: grid;
   padding: 2rem 1rem;
   gap: 2rem;
-  h3 {
-    text-align: center;
+  background: $coral-red;
+  @include breakpoint(laptop) {
+    padding: 5rem 2rem;
   }
+
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
     gap: 0.5rem;
-    li {  
-      @include flex('column');
+    @include breakpoint(laptop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    li {
+      @include flex("column");
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
       list-style: none;
       margin: 0;
       padding: 0;
       text-align: center;
-
+      font-weight: bold;
+      color: #fff;
+      margin: 0 auto;
+      @include breakpoint(laptop) {
+        font-size: 1.25rem;
+      }
+      &:last-of-type:nth-child(odd) {
+        @include breakpoint(laptopdown) {
+          grid-column: 1 / -1;
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+      img {
+        max-width: 100px;
+        filter: invert(1);
+        @include breakpoint(laptop) {
+          max-width: 150px;
+        }
+      }
       span {
-        font-size: 0.8em;
+        font-weight: normal;
+        font-size: 0.75em;
+        font-style: italic;
       }
     }
   }

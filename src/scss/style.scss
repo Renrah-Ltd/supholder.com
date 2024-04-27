@@ -7,6 +7,7 @@
 @import "type";
 
 @import "components/features";
+@import "components/faqs";
 
 body {
   background: $soft-white;
@@ -89,7 +90,7 @@ body {
 
 .modal {
   position: fixed;
-  top: -100vh;
+  top: -150vh;
   left: 0;
   right: 0;
   height: 100%;
@@ -111,7 +112,7 @@ body {
     z-index: 3;
     display: grid;
 
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -149,6 +150,7 @@ body {
 
   .modal-image {
     aspect-ratio: 1;
+    max-height: 50vh;
   }
 
   .modal-bg {
