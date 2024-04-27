@@ -4,6 +4,7 @@ import productOptions from "../products.json"
 interface VariantOption {
     price: number;
     url?: string;
+    backorder?: boolean;
 }
 
 interface ColorOptions {
@@ -56,7 +57,8 @@ const BuyNowModal: React.FC = () => {
     const [selectedColor, setSelectedColor] = useState<string>(initialColor);
     const [selectedSize, setSelectedSize] = useState<string>(initialSize);
     const [stripeUrl, setStripeUrl] = useState<string>(processedProductOptions[initialColor][initialSize].url);
-    const [price, setPrice] = useState<string>(processedProductOptions[initialColor][initialSize].price);
+    const [price, setPrice] = useState<number>(processedProductOptions[initialColor][initialSize].price);
+    const [backorder, setBackorder] = useState<boolean>(processedProductOptions[initialColor][initialSize].backorder);
 
     useEffect(() => {
         const handleOpenModal = () => setIsOpen(true);
@@ -84,10 +86,13 @@ const BuyNowModal: React.FC = () => {
     };
 
     const updateStripeUrl = (color: string, size: string): void => {
-        const { url, price } = processedProductOptions[color][size];
+        const { url, price, backorder } = processedProductOptions[color][size];
         setStripeUrl(url);
         setPrice(price);
+        setBackorder(backorder)
     };
+
+
 
     return (
         <div>
@@ -135,6 +140,7 @@ const BuyNowModal: React.FC = () => {
                             <a href={stripeUrl} target="_blank" rel="noopener noreferrer">
                                 {price > 0 ? <button type="button">Buy Now - ${price.toFixed(2)}</button> : <button disabled type="button">Coming Soon</button>}
                             </a>
+                            {backorder && <p className='backorder'>Product Currently backordered. Please add 3-5 business days to fulfillment time.</p>}
                         </form>
                         <button className='modal-close' type="button" onClick={handleCloseModal}>Close</button>
                     </div>

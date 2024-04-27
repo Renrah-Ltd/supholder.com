@@ -51,7 +51,7 @@ const Header: React.FC = () => (
     <div className="header-content">
       <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
       <h1>Adventure Without Spills</h1>
-      <CallToAction />
+      <BuyNowButton />
       <p>Universal Can Holder for Stand-Up Paddle Boards</p>
     </div>
   </header>
@@ -66,7 +66,7 @@ const FeaturesSection: React.FC = () => (
       </li>
       <li>
         <img className="sup-holder-logo" src={Can} alt="Paddleboard Icon" />
-        Secure Grip For 12oz & 24oz Cans. <span>"Skinny Can" Version Coming Soon</span></li>
+        Secure Grip For 12oz & 16oz Cans. <span>"Skinny Can" Version Coming Soon</span></li>
       <li>
         <img className="sup-holder-logo" src={Weather} alt="Paddleboard Icon" />
         High-Strength, Weather-Resistant Plastic</li>
@@ -81,14 +81,31 @@ const HowItWorks: React.FC = () => (
   </section>
 );
 
-const Testimonials: React.FC = () => (
-  <section>
-    <h3>Customer Reviews</h3>
-    <p>"Best purchase ever! My drinks stay put no matter the waves."</p>
-  </section>
-);
+const Testimonials: React.FC = () => {
 
-const CallToAction: React.FC = () => {
+  const testimonies = [
+    {
+      "name": "Emily",
+      "review": "I'm new to the SUP world but know the importance of having a beverage on the water with me. SUP Holder is perfect to keep my beer upright so get to drink every drop - no drops spilled."
+    }
+  ]
+
+  return (
+    <section className="testimonials__wrapper">
+      <h3>Customer Reviews</h3>
+      <div className="testimonials">
+        {testimonies.map(({ name, review }) => {
+          return (<div className="testimonial__wrapper">
+            <p>{review}</p>
+            <em>- {name}</em>
+          </div>)
+        })}
+      </div>
+    </section>
+  )
+};
+
+const BuyNowButton: React.FC = () => {
   const openModal = () => {
     const event = new CustomEvent('openModalEvent');
     window.dispatchEvent(event);
@@ -138,7 +155,7 @@ const FAQSection: React.FC = () => {
 
 const Footer: React.FC = () => (
   <footer>
-    
+
   </footer>
 );
 const IndexPage: React.FC<PageProps> = () => {
@@ -148,10 +165,15 @@ const IndexPage: React.FC<PageProps> = () => {
         <Header />
         <FeaturesSection />
         <Testimonials />
-        <CallToAction />
+        <section className="cta">
+          <h2>Get Your       <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
+            Today!</h2>
+          <BuyNowButton />
+        </section>
         <FAQSection />
         <Footer />
         <BuyNowModal />
+        <BuyNowButton className="floating" />
       </>
     </Layout>
   )

@@ -1,9 +1,15 @@
 .faqs {
-  padding: 2rem;
-  @include flex('column');
-    gap: 0.5rem;
+  padding: $gutter;
+  @include flex("column");
+  gap: 0.5rem;
+
+  h3 {
+    text-align: center;
+  }
+
   details {
     max-width: $contentWidth;
+    margin: 0 auto;
     width: 100%;
     border: 2px solid $deep-ocean-blue;
     padding: 0.5rem;

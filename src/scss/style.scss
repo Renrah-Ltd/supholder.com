@@ -8,6 +8,7 @@
 
 @import "components/features";
 @import "components/faqs";
+@import "components/testimonials";
 
 body {
   background: $soft-white;
@@ -26,6 +27,7 @@ body {
   border-radius: 100px;
   cursor: pointer;
   transition: 300ms;
+  font-family: "Bungee", sans-serif;
   @include card(1);
 
   width: 100%;
@@ -52,7 +54,7 @@ body {
   }
 
   .header-content {
-    padding: 2rem 1rem;
+    padding: $gutter $gutter;
     @include flex("column");
     align-items: center;
     gap: 1.5rem;
@@ -99,6 +101,7 @@ body {
   align-items: center;
   justify-content: center;
   @include transition(300ms);
+  z-index: 99999;
 
   &.open {
     top: 0;
@@ -110,6 +113,7 @@ body {
     max-width: $contentWidth;
     position: relative;
     z-index: 3;
+    max-height: 90vh;
     display: grid;
 
     @include breakpoint(tablet) {
@@ -150,7 +154,7 @@ body {
 
   .modal-image {
     aspect-ratio: 1;
-    max-height: 50vh;
+    max-height: 40vh;
   }
 
   .modal-bg {
@@ -215,4 +219,77 @@ body:has(.modal-bg:hover) .modal-close {
       opacity: 0.5;
     }
   }
+
+  .backorder {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+.cta {
+  @include flex("column");
+  align-items: center;
+  justify-content: center;
+  padding: 4rem $gutter;
+  background: $ocean-blue;
+  gap: 2rem;
+  position: relative;
+
+  &:after {
+    content: "";
+    background: url("../images/waves.jpeg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
+  }
+
+  * {
+     z-index: 3;}
+
+  h2 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    gap: 1rem;
+    @include flex(column);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @include breakpoint(laptop) {
+      font-size: 4rem;
+      flex-direction: row;
+    }
+
+    img {
+      width: 75%;
+
+      @include breakpoint(laptop) {
+        width: 15rem;
+      }
+    }
+   
+  }
+  .button {
+    font-size: 2rem;
+    background: #fff;
+    color: $deep-ocean-blue;
+  }
+}
+
+.Layout {
+  position: relative;
+  @include flex(column)
+}
+
+.Layout > .button:last-of-type {
+  position: sticky;
+  z-index: 999;
+  font-size: 2rem;
+  width: calc(100% - #{$gutter * 2});
+  bottom: 1rem;
+  margin: 1rem auto;
 }

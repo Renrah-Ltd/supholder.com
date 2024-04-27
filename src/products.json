@@ -13,7 +13,8 @@
   },
   "Frosted": {
     "Regular Cans": {
-      "price": 0
+      "price": 30,
+      "backorder": true
     }
   }
 }

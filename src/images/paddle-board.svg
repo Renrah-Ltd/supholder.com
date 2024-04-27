@@ -1,18 +1,21 @@
 <svg width="359" height="358" viewBox="0 0 359 358" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_215_3)">
-<path d="M66 286.411C66 155.292 116.615 49 179.053 49V49C241.49 49 292.105 155.292 292.105 286.411V642.526H66V286.411Z" stroke="black" stroke-width="15"/>
-<rect x="109" y="211" width="145" height="3" fill="black"/>
-<rect x="109" y="310" width="145" height="4" fill="black"/>
-<path d="M109.967 260L252.999 212.632L253.605 216.306L110.572 263.674L109.967 260Z" fill="black"/>
-<path d="M109.967 309.368L252.999 262L253.605 265.674L110.572 313.043L109.967 309.368Z" fill="black"/>
-<path d="M253.605 260L110.572 212.632L109.967 216.306L252.999 263.674L253.605 260Z" fill="black"/>
-<path d="M253.605 309.368L110.572 262L109.967 265.674L252.999 313.043L253.605 309.368Z" fill="black"/>
-<circle cx="105.254" cy="212.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="105.254" cy="262.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="105.254" cy="311.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="258.15" cy="212.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="258.15" cy="262.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="258.15" cy="311.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<path d="M66 245.411C66 114.292 116.615 8 179.053 8V8C241.49 8 292.105 114.292 292.105 245.411V601.526H66V245.411Z" stroke="black" stroke-width="15"/>
+<path d="M178 8C367.719 8 305.098 486.833 305.098 602H50.9016C50.9016 486.833 -11.7195 8 178 8Z" stroke="black" stroke-opacity="0.3" stroke-width="2"/>
+<path d="M178 8C396.801 8 324.581 486.833 324.581 602H31.4194C31.4194 486.833 -40.8005 8 178 8Z" stroke="black" stroke-opacity="0.3"/>
+<path d="M178 8C420.342 8 340.352 486.833 340.352 602H15.6481C15.6481 486.833 -64.3424 8 178 8Z" stroke="black" stroke-opacity="0.3" stroke-width="0.5"/>
+<rect x="109" y="170" width="145" height="3" fill="black"/>
+<rect x="109" y="269" width="145" height="4" fill="black"/>
+<path d="M109.967 219L252.999 171.632L253.605 175.306L110.572 222.674L109.967 219Z" fill="black"/>
+<path d="M109.967 268.368L252.999 221L253.605 224.674L110.572 272.043L109.967 268.368Z" fill="black"/>
+<path d="M253.605 219L110.572 171.632L109.967 175.306L252.999 222.674L253.605 219Z" fill="black"/>
+<path d="M253.605 268.368L110.572 221L109.967 224.674L252.999 272.043L253.605 268.368Z" fill="black"/>
+<circle cx="105.254" cy="171.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="105.254" cy="221.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="105.254" cy="270.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="258.15" cy="171.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="258.15" cy="221.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="258.15" cy="270.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
 </g>
 <defs>
 <clipPath id="clip0_215_3">

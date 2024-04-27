@@ -1,15 +1,17 @@
 .features {
   display: grid;
-  padding: 2rem 1rem;
+  padding: $gutter;
   gap: 2rem;
   background: $coral-red;
+  position: relative;
+  z-index: 1000;
   @include breakpoint(laptop) {
     padding: 5rem 2rem;
   }
 
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     margin: 0;
     padding: 0;
     gap: 0.5rem;
@@ -30,13 +32,6 @@
       margin: 0 auto;
       @include breakpoint(laptop) {
         font-size: 1.25rem;
-      }
-      &:last-of-type:nth-child(odd) {
-        @include breakpoint(laptopdown) {
-          grid-column: 1 / -1;
-          width: 50%;
-          margin: 0 auto;
-        }
       }
       img {
         max-width: 100px;

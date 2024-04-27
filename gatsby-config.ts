@@ -13,7 +13,25 @@ const config: GatsbyConfig = {
     resolve: "gatsby-plugin-google-gtag", options: {
       trackingIds: ["G-EEDQVE1VNF"]
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  },
+    "gatsby-plugin-image",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `SUP Holder — Adventure Without Spills`,
+        short_name: `SUP Holder`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        // Generate PWA icons and a favicon
+        icon: `src/images/icon.png`,
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "images",
