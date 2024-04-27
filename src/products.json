@@ -8,13 +8,14 @@
   "Blue": {
     "Regular Cans": {
       "price": 30,
-      "url": "https://buy.stripe.com/test_6oE3fD7II4d0cQ8eUU"
+      "url": "https://buy.stripe.com/test_aEUg2p2ooeRE6rK4gh"
     }
   },
   "Frosted": {
     "Regular Cans": {
       "price": 30,
-      "backorder": true
+      "backorder": true,
+      "url": "https://buy.stripe.com/test_bIY7vTbYY4d003mbIK"
     }
   }
 }

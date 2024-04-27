@@ -292,4 +292,11 @@ body:has(.modal-bg:hover) .modal-close {
   width: calc(100% - #{$gutter * 2});
   bottom: 1rem;
   margin: 1rem auto;
+
+  @include breakpoint(laptop) {
+    font-size: 1.5rem;
+    width: auto;
+    margin: 1rem 1rem 1rem auto;
+
+  }
 }
