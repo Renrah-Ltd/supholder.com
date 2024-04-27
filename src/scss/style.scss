@@ -48,6 +48,8 @@ body {
   background: linear-gradient(60deg, $deep-ocean-blue, $vibrant-teal);
   color: #fff;
   display: grid;
+  position: relative;
+  z-index: 1000;
 
   @include breakpoint(laptop) {
     grid-template-columns: 1fr 1fr;
