@@ -30,7 +30,7 @@ const Header: React.FC = () => (
     <StaticQuery
       query={graphql`
       query {
-        file(relativePath: { eq: "header-sample.webp" }) {
+        file(relativePath: { eq: "products/blue/both.jpg" }) {
           childImageSharp {
             gatsbyImageData(
               width: 800
@@ -113,7 +113,7 @@ const BuyNowButton: React.FC = () => {
 
 
   return (
-    <Button onClick={openModal} label="Buy Now" />
+    <Button onClick={openModal} label="Order Now" />
   )
 };
 
@@ -123,7 +123,7 @@ const FAQSection: React.FC = () => {
     { q: "How does the SUP Holder attach to the paddle board?", a: "The SUP Holder attaches to your paddleboard by sitting underneath the bungees on the nose of the board. If your board does NOT have bungees, the SUP Holder won't work for you." },
     {
       q: "What size cans work with the SUP Holder?",
-      a: "The SUP Holder is designed to snugly fit the standard 12oz beverage can (picture a standard Beer can). It can also hold taller cans as long as their diameter is 2.6 inches. (think Monster Energy cans). Skinny cans ~can~ fit, but they won't be as stable. Skinny can SUP Holders coming soon."
+      a: "The SUP Holder is designed to snugly fit the standard 12oz beverage can (picture a standard soda can). It can also hold taller cans as long as their diameter is 2.6 inches. (think Monster Energy cans). Skinny cans ~can~ fit, but they won't be as stable. Skinny can SUP Holders coming soon."
     },
     {
       q: "What is the SUP Holder made out of?",
@@ -154,8 +154,9 @@ const FAQSection: React.FC = () => {
 };
 
 const Footer: React.FC = () => (
-  <footer>
-
+  <footer className="main-footer">
+    <p>© 2024 SUP Holder</p>
+    <small>Always Paddle Board Responsibly</small>
   </footer>
 );
 const IndexPage: React.FC<PageProps> = () => {
@@ -166,14 +167,14 @@ const IndexPage: React.FC<PageProps> = () => {
         <FeaturesSection />
         <Testimonials />
         <section className="cta">
-          <h2>Get Your       <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
+          <h2>Order Your <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
             Today!</h2>
           <BuyNowButton />
         </section>
         <FAQSection />
+        <BuyNowButton />
         <Footer />
         <BuyNowModal />
-        <BuyNowButton className="floating" />
       </>
     </Layout>
   )

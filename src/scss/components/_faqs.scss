@@ -12,14 +12,50 @@
     margin: 0 auto;
     width: 100%;
     border: 2px solid $deep-ocean-blue;
+    border-radius: 15px;
     padding: 0.5rem;
     summary {
       padding: 0.5rem;
       font-weight: 900;
+      border-radius: calc(15px - (0.5rem / 2));
+      transition: 300ms;
+      &::marker {
+        color: $coral-red;
+        transition: 300ms;
+      }
+
+      &:hover {
+        background: $soft-gray;
+        transition: 100ms;
+      }
+    }
+    p {opacity: 0; transition: 300ms; margin-right: $gutter;}
+
+    &[open] {
+      summary {
+        background: $coral-red;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        &::marker {
+          color: #fff;
+          transition: 100ms;
+        }
+      }
+      summary ~ * {
+        animation: sweep 1s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
     }
   }
 
   &-contact {
     text-align: center;
   }
+}
+
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: 0px}
+  100%  {opacity: 1; margin-left: $gutter}
 }

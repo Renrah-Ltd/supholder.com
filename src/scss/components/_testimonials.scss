@@ -1,8 +1,9 @@
 .testimonials__wrapper{
-    padding: 5rem $gutter;
+    padding: 5rem $gutter 7rem;
+    background:linear-gradient($sand-beige, lighten($sand-beige, 15));
 
     @include breakpoint(laptop) {
-    padding: 5rem;
+    padding: 5rem 10vw 7rem;
         
     }
     h3 {
@@ -21,6 +22,7 @@
     padding: 2rem;
     @include card(1);
     border-radius: 30px;
+    background: $soft-white;
 
     p{}
     em{ 

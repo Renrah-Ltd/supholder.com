@@ -1,0 +1,12 @@
+footer.main-footer {
+    @include flex(column);
+    align-items: center;
+
+    justify-content: center;
+    padding: 3rem $gutter;
+    background: linear-gradient( $deep-ocean-blue, darken($deep-ocean-blue, 20));
+    color: #fff;
+    small {
+        font-style: italic;
+    }
+}

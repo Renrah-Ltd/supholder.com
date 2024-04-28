@@ -8,7 +8,8 @@
   "Blue": {
     "Regular Cans": {
       "price": 30,
-      "url": "https://buy.stripe.com/test_aEUg2p2ooeRE6rK4gh"
+      "url": "https://buy.stripe.com/test_aEUg2p2ooeRE6rK4gh",
+      "image": "images/products/blue/front.jpg"
     }
   },
   "Frosted": {

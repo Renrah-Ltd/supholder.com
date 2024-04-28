@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import productOptions from "../products.json"
+import { StaticQuery, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 interface VariantOption {
     price: number;
     url?: string;
     backorder?: boolean;
+    image?: string;
 }
 
 interface ColorOptions {
@@ -59,6 +62,7 @@ const BuyNowModal: React.FC = () => {
     const [stripeUrl, setStripeUrl] = useState<string>(processedProductOptions[initialColor][initialSize].url);
     const [price, setPrice] = useState<number>(processedProductOptions[initialColor][initialSize].price);
     const [backorder, setBackorder] = useState<boolean>(processedProductOptions[initialColor][initialSize].backorder);
+    const [image, setImage] = useState<string>(processedProductOptions[initialColor][initialSize].image);
 
     useEffect(() => {
         const handleOpenModal = () => setIsOpen(true);
@@ -86,13 +90,12 @@ const BuyNowModal: React.FC = () => {
     };
 
     const updateStripeUrl = (color: string, size: string): void => {
-        const { url, price, backorder } = processedProductOptions[color][size];
-        setStripeUrl(url);
-        setPrice(price);
-        setBackorder(backorder)
+        const { url: newurl, price: newprice, backorder: newbackorder, image: newimage } = processedProductOptions[color][size];
+        setStripeUrl(newurl || "");
+        setPrice(newprice);
+        setBackorder(newbackorder || false)
+        setImage(newimage || "");
     };
-
-
 
     return (
         <div>
@@ -103,7 +106,8 @@ const BuyNowModal: React.FC = () => {
 
                 <div className="modal-content">
                     <div className='modal-image'>
-                        IMAGE
+                        
+                        <img key={image} src={image} />
                     </div>
                     <div className='buy-now-form__wrapper'>
                         <h2>Pick Your SUP Holder</h2>
@@ -139,10 +143,10 @@ const BuyNowModal: React.FC = () => {
                                 ))}
                             </fieldset>
                         </form>
-                            <a className='button' href={stripeUrl} target="_blank" rel="noopener noreferrer">
-                                {price > 0 ? `Buy Now - $${price.toFixed(2)}` : `Coming Soon`}</a>
- 
-                            <p className='backorder'>{backorder && "Product currently backordered. Please add 3-5 business days to fulfillment time."}</p>
+                        <a className='button' href={stripeUrl || "#"} target="_blank" rel="noopener noreferrer">
+                            {price > 0 ? `Order Now - $${price.toFixed(2)}` : `Coming Soon`}</a>
+
+                        <p className='backorder'>{backorder && "Product currently backordered. Please add 3-5 business days to fulfillment time."}</p>
                     </div>
 
                 </div>
