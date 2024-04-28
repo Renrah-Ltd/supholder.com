@@ -97,14 +97,15 @@ const BuyNowModal: React.FC = () => {
     return (
         <div>
 
-            <div className={"modal" + (isOpen ? " open" : "")}>
+            <div className={"buy-now-modal modal" + (isOpen ? " open" : "")}>
                 <div className='modal-bg' onClick={handleCloseModal}></div>
+                <button className='modal-close' type="button" onClick={handleCloseModal}>Close</button>
 
                 <div className="modal-content">
                     <div className='modal-image'>
                         IMAGE
                     </div>
-                    <div>
+                    <div className='buy-now-form__wrapper'>
                         <h2>Pick Your SUP Holder</h2>
                         <form className="buy-now-form">
                             <fieldset>
@@ -137,12 +138,11 @@ const BuyNowModal: React.FC = () => {
                                     </label>
                                 ))}
                             </fieldset>
-                            <a href={stripeUrl} target="_blank" rel="noopener noreferrer">
-                                {price > 0 ? <button type="button">Buy Now - ${price.toFixed(2)}</button> : <button disabled type="button">Coming Soon</button>}
-                            </a>
-                            {backorder && <p className='backorder'>Product Currently backordered. Please add 3-5 business days to fulfillment time.</p>}
                         </form>
-                        <button className='modal-close' type="button" onClick={handleCloseModal}>Close</button>
+                            <a className='button' href={stripeUrl} target="_blank" rel="noopener noreferrer">
+                                {price > 0 ? `Buy Now - $${price.toFixed(2)}` : `Coming Soon`}</a>
+ 
+                            <p className='backorder'>{backorder && "Product Currently backordered. Please add 3-5 business days to fulfillment time."}</p>
                     </div>
 
                 </div>
