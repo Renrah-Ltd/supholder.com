@@ -1,0 +1,20 @@
+.thanks__wrapper {
+  @include flex(column);
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 96vh;
+//   height: -webkit-fill-available;
+  gap: 3rem;
+  padding: 3rem $gutter;
+  img {
+    mix-blend-mode: multiply;
+    max-width: 100%;
+    max-height: 45vh;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+  h1, p {
+    text-align: center;
+  }
+}

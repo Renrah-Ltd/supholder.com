@@ -2,11 +2,16 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/layout"
 
+import both from "../images/products/blue/tilt.jpg";
 
 const ThanksPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <><h1>Thanks for your order!</h1></>
+      <div className="thanks__wrapper">
+        <img src={both} alt={"2 Blue SUP Holders"} />
+        <h1>Thanks for your order!</h1>
+        <p>Keep an eye on the email you submitted for order updates, and please email us at sup@supholder.com if you have any questions!</p>
+      </div>
     </Layout>
   )
 }

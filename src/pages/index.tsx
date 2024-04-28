@@ -132,6 +132,10 @@ const FAQSection: React.FC = () => {
     {
       q: "How long does it take to ship?",
       a: "Each SUP Holder is printed on demand. It can take 3-5 business days for your order to ship, and then another 5-7 days to arrive at your doorstep."
+    },
+    {
+      q: "Where do you ship to?",
+      a: "We only ship to addresses in the United States."
     }
   ]
 
@@ -167,7 +171,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <FeaturesSection />
         <Testimonials />
         <section className="cta">
-          <h2>Order Your <img className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
+          <h2>Order Your <img aria-label={"SUP Holder"} className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
             Today!</h2>
           <BuyNowButton />
         </section>
@@ -181,5 +185,35 @@ const IndexPage: React.FC<PageProps> = () => {
 }
 
 export default IndexPage
+import ogImage from "../images/og-image.png";
 
-export const Head: HeadFC = () => <title>SUP Holder — Adventure Without Spills</title>
+export const Head: HeadFC = () => {
+
+  const title = "SUP Holder — Adventure Without Spills! Cup Holder for Stand Up Paddle Boards"
+  const description = "Secure your beverages while you're out paddle boarding! Secure fit for 12 & 16oz cans. Adventure without spills!"
+
+  return (<>
+    <title>{title}</title>
+    <meta name="robots" content="index, follow" />
+
+    <meta property="description" content={description} />
+
+    <meta
+      property="og:image"
+      content={ogImage}
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://supholder.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta
+      property="twitter:image"
+      content={ogImage}
+    />
+  </>)
+}

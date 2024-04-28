@@ -11,8 +11,34 @@
 @import "components/testimonials";
 @import "components/footer";
 
-body {
+@import "pages/thanks";
+body,
+html {
   background: $soft-white;
+  height: 100%;
+  height: -webkit-fill-available !important;
+}
+
+.Layout {
+  position: relative;
+  @include flex(column);
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+.Layout > .button:last-of-type {
+  position: sticky;
+  z-index: 999;
+  font-size: 2rem;
+  width: calc(100% - #{$gutter * 2});
+  bottom: 1rem;
+  margin: 1rem auto;
+
+  @include breakpoint(laptop) {
+    font-size: 1.5rem;
+    width: auto;
+    margin: 1rem 1rem 1rem auto;
+  }
 }
 
 .button,
@@ -71,7 +97,7 @@ body {
     max-height: 35vh;
     width: 100%;
     @include breakpoint(tablet) {
-      max-height: 50vh;      
+      max-height: 50vh;
     }
     @include breakpoint(laptop) {
       max-height: unset;
@@ -263,7 +289,7 @@ body:has(.modal-bg:hover) .modal-close {
   gap: 2rem;
   position: relative;
 
-  mask-image: url('../images/top-wave-mask.svg');
+  mask-image: url("../images/top-wave-mask.svg");
   mask-repeat: repeat-x;
   mask-position: top;
 
@@ -309,25 +335,5 @@ body:has(.modal-bg:hover) .modal-close {
     font-size: 2rem;
     background: #fff;
     color: $deep-ocean-blue;
-  }
-}
-
-.Layout {
-  position: relative;
-  @include flex(column);
-}
-
-.Layout > .button:last-of-type {
-  position: sticky;
-  z-index: 999;
-  font-size: 2rem;
-  width: calc(100% - #{$gutter * 2});
-  bottom: 1rem;
-  margin: 1rem auto;
-
-  @include breakpoint(laptop) {
-    font-size: 1.5rem;
-    width: auto;
-    margin: 1rem 1rem 1rem auto;
   }
 }
