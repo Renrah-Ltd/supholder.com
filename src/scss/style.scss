@@ -96,6 +96,7 @@ html {
   .header-image {
     max-height: 35vh;
     width: 100%;
+    background: #fff;
     @include breakpoint(tablet) {
       max-height: 50vh;
     }
