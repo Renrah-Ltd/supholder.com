@@ -142,7 +142,7 @@ const BuyNowModal: React.FC = () => {
                             <a className='button' href={stripeUrl} target="_blank" rel="noopener noreferrer">
                                 {price > 0 ? `Buy Now - $${price.toFixed(2)}` : `Coming Soon`}</a>
  
-                            <p className='backorder'>{backorder && "Product Currently backordered. Please add 3-5 business days to fulfillment time."}</p>
+                            <p className='backorder'>{backorder && "Product currently backordered. Please add 3-5 business days to fulfillment time."}</p>
                     </div>
 
                 </div>
