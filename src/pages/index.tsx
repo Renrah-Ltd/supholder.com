@@ -86,13 +86,13 @@ const Testimonials: React.FC = () => {
   const testimonies = [
     {
       "name": "Emily",
-      "review": "I'm new to the SUP world but know the importance of having a beverage on the water with me. SUP Holder is perfect to keep my beer upright so get to drink every drop - no drops spilled."
+      "review": "I'm new to the SUP world but know the importance of having a beverage on the water with me. SUP Holder is perfect to keep my drink upright so I get to enjoy every drop - no drops spilled."
     }
   ]
 
   return (
     <section className="testimonials__wrapper">
-      <h3>Customer Reviews</h3>
+      <h3>We may be light on reviews, but we’re heavy on happy customers! ⭐️⭐️⭐️⭐️⭐️</h3>
       <div className="testimonials">
         {testimonies.map(({ name, review }) => {
           return (<div className="testimonial__wrapper">
