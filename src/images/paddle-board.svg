@@ -4,16 +4,16 @@
 <path d="M177.947 8C367.667 8 305.046 486.833 305.046 602H50.849C50.849 486.833 -11.7721 8 177.947 8Z" stroke="black" stroke-opacity="0.3" stroke-width="2"/>
 <path d="M177.947 8C396.748 8 324.528 486.833 324.528 602H31.3668C31.3668 486.833 -40.8531 8 177.947 8Z" stroke="black" stroke-opacity="0.3"/>
 <path d="M177.947 8C420.29 8 340.299 486.833 340.299 602H15.5954C15.5954 486.833 -64.395 8 177.947 8Z" stroke="black" stroke-opacity="0.3" stroke-width="0.5"/>
-<rect x="113.947" y="117" width="135" height="3" fill="black"/>
+<rect x="126" y="117" width="111" height="3" fill="black"/>
 <rect x="108.947" y="216" width="145" height="4" fill="black"/>
-<path d="M109.914 166L249.947 119.625L250.553 123.299L110.52 169.674L109.914 166Z" fill="black"/>
+<path d="M109.914 166L239.395 120.326L240 124L110.52 169.674L109.914 166Z" fill="black"/>
 <path d="M109.914 215.368L252.947 168L253.552 171.674L110.52 219.043L109.914 215.368Z" fill="black"/>
-<path d="M253.552 166L113.142 119.5L112.537 123.174L252.947 169.674L253.552 166Z" fill="black"/>
+<path d="M254.855 164.695L123.803 121.694L121.197 124.305L254.25 168.369L254.855 164.695Z" fill="black"/>
 <path d="M253.552 215.368L110.52 168L109.914 171.674L252.947 219.043L253.552 215.368Z" fill="black"/>
-<circle cx="109.202" cy="118.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="119.202" cy="118.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
 <circle cx="105.202" cy="168.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
 <circle cx="105.202" cy="217.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
-<circle cx="254.098" cy="118.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
+<circle cx="244.098" cy="118.298" r="5.59375" stroke="black" stroke-width="3.72917"/>
 <circle cx="258.098" cy="168.132" r="5.59375" stroke="black" stroke-width="3.72917"/>
 <circle cx="258.098" cy="217.965" r="5.59375" stroke="black" stroke-width="3.72917"/>
 <line x1="96.9474" y1="282" x2="96.9474" y2="385" stroke="black" stroke-width="2"/>
