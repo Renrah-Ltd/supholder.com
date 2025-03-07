@@ -4,9 +4,10 @@
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
+
         @include breakpoint(laptop) {
             flex-direction: row;
-            
+
         }
     }
 
@@ -18,7 +19,7 @@
         justify-content: center;
         flex-direction: column;
         font-size: 2rem;
-        padding: $gutter / 2;
+        padding: calc($gutter / 2);
         text-align: right;
 
         @include breakpoint(laptop) {
