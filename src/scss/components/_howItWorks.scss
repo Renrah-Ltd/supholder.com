@@ -2,9 +2,11 @@
     &__wrapper {
         display: flex;
         flex-direction: column-reverse;
-
+        align-items: center;
+        justify-content: center;
         @include breakpoint(laptop) {
             flex-direction: row;
+            
         }
     }
 
