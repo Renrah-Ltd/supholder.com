@@ -30,13 +30,12 @@ const Header: React.FC = () => (
     <StaticQuery
       query={graphql`
       query {
-        file(relativePath: { eq: "products/blue/both.jpg" }) {
+        file(relativePath: { eq: "sup-holder-hand-crop.jpg" }) {
           childImageSharp {
             gatsbyImageData(
-              width: 800
-              placeholder: BLURRED
+              height: 1000
+              aspectRatio: 1 
               formats: [AUTO, WEBP, AVIF]
-              layout: CONSTRAINED
             )
           }
         }
@@ -74,12 +73,7 @@ const FeaturesSection: React.FC = () => (
   </section>
 );
 
-const HowItWorks: React.FC = () => (
-  <section>
-    <h3>How It Works</h3>
-    <p>Simple step-by-step guide on how to attach the SUP Holder to your paddle board.</p>
-  </section>
-);
+
 
 const Testimonials: React.FC = () => {
 
@@ -159,7 +153,8 @@ const FAQSection: React.FC = () => {
 
 const Footer: React.FC = () => (
   <footer className="main-footer">
-    <p>© 2024 SUP Holder</p>
+    <p>© 2024 SUP Holder | sup@SUPHolder.com</p>
+    <p>Made with 💜 in Denver, Colorado</p>
     <small>Always Paddle Board Responsibly</small>
   </footer>
 );
@@ -169,6 +164,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <>
         <Header />
         <FeaturesSection />
+        <HowItWorks />
         <Testimonials />
         <section className="cta">
           <h2>Order Your <img aria-label={"SUP Holder"} className="sup-holder-logo" src={SUPHolderLogo} alt="SUP Holder" />
@@ -186,6 +182,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 import ogImage from "../images/og-image.png";
+import HowItWorks from "../components/how-it-works";
 
 export const Head: HeadFC = () => {
 

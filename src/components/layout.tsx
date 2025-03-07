@@ -1,14 +1,14 @@
 import { PageProps } from "gatsby";
 import * as React from "react";
 import Swatches from "./swatches";
-export interface LayoutProps  { 
+export interface LayoutProps {
     children: React.ReactNode
- }
- 
-const Layout: React.FC<LayoutProps> = ({children}) => {
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className="Layout">
-                    <Swatches />
+            <Swatches />
 
             {children}
             <Swatches />

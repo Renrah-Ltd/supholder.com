@@ -8,6 +8,7 @@
 
 @import "components/features";
 @import "components/faqs";
+@import "components/howItWorks";
 @import "components/testimonials";
 @import "components/footer";
 
@@ -80,6 +81,7 @@ html {
 
   @include breakpoint(laptop) {
     grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
   }
 
   .header-content {
@@ -94,7 +96,7 @@ html {
   }
 
   .header-image {
-    max-height: 35vh;
+    max-height: 55vh;
     width: 100%;
     background: #fff;
     @include breakpoint(tablet) {
@@ -277,6 +279,10 @@ body:has(.modal-bg:hover) .modal-close {
   .backorder {
     text-align: center;
     font-size: 0.8rem;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
